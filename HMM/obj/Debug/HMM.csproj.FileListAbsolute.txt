@@ -1,0 +1,5 @@
+F:\GitHub\HMM\HMM\HMM\bin\Debug\HMM.dll
+F:\GitHub\HMM\HMM\HMM\bin\Debug\HMM.pdb
+F:\GitHub\HMM\HMM\HMM\obj\Debug\HMM.csprojResolveAssemblyReference.cache
+F:\GitHub\HMM\HMM\HMM\obj\Debug\HMM.dll
+F:\GitHub\HMM\HMM\HMM\obj\Debug\HMM.pdb
