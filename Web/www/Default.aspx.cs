@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Splash;
 
 public partial class www_Default : System.Web.UI.Page
 {
+    //显示结果
     public string Result = "";
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -49,10 +51,51 @@ public partial class www_Default : System.Web.UI.Page
         //解法1：穷举所有可能的骰子序列（上面就有了，所以不写了）
 
         //解法2：前向算法（forward algorithm）
+        var sn3 = new int[] { 1, 6, 3 };
 
+        var pI3 = ForwardAlgorithm(pS, pN, sn3, sn3.Length).Sum();
 
-        Result = string.Join("   ", pList.OrderByDescending(p => p)) + "---:" + pI2;
+        //问题3：BaumWelch算法 http://www.52nlp.cn/hmm-learn-best-practices-seven-forward-backward-algorithm-5
+        Double LogProbInit = 0.0;
+        Double LogProbFinal = 0.0;
+        var sn4 = new int[] { 1, 6, 3 };
+        var hmm = new HMM(3, 8);
+//        var round = hmm.BaumWelch(sn4, out LogProbInit, out LogProbFinal);
+
+//        Result = round.ToString() + ":" + LogProbInit + ":" + LogProbFinal;
+//        Result = pI3.ToString();
+//        Result = string.Join("   ", pList.OrderByDescending(p => p)) + "---:" + pI2;
 //        Result = total.ToString();
+    }
+
+    private static double[] ForwardAlgorithm(double[] pS, double[][] pN, int[] sn, int count = 0)
+    {
+        if (count == 0)
+        {
+            return new[] {1.0};
+        }
+        else if (count > sn.Length)
+        {
+            count = sn.Length;
+        }
+
+        //递归获取前一个概率的集合,用于这一次的计算
+        var preventResult = ForwardAlgorithm(pS, pN, sn, count - 1);
+
+        //获取当前的显式值
+        var nowS = sn[count - 1];
+        var psLength = pS.Length;
+        
+        //定义返回值
+        var res = new double[psLength];
+        for (int i = 0; i < psLength; i++)
+        {
+            var sntemp = new int[,] { { i, nowS } };
+            var pi = CountProbability(pS, pN, sntemp);
+            var sump = preventResult.Sum();
+            res[i] = sump*pi;
+        }
+        return res;
     }
 
     /// <summary>

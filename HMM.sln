@@ -1,12 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMM", "HMM\HMM.csproj", "{2A7036E3-A2ED-48C4-AA44-B2EB3171E1CE}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web(2)", "http://localhost:4841", "{B6EE023E-8F5E-4072-B581-1F265ACB5848}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web(1)", "http://localhost:4841", "{B6EE023E-8F5E-4072-B581-1F265ACB5848}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{2a7036e3-a2ed-48c4-aa44-b2eb3171e1ce}|HMM.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_4841"
 		Debug.AspNetCompiler.PhysicalPath = "Web\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4841\"
@@ -25,6 +28,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web(2)", "http://localhost:
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMMTest", "HMMTest\HMMTest.csproj", "{BDA248FB-FC9D-4D71-8168-43BE83C194C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +44,10 @@ Global
 		{B6EE023E-8F5E-4072-B581-1F265ACB5848}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6EE023E-8F5E-4072-B581-1F265ACB5848}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{B6EE023E-8F5E-4072-B581-1F265ACB5848}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{BDA248FB-FC9D-4D71-8168-43BE83C194C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDA248FB-FC9D-4D71-8168-43BE83C194C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDA248FB-FC9D-4D71-8168-43BE83C194C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDA248FB-FC9D-4D71-8168-43BE83C194C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

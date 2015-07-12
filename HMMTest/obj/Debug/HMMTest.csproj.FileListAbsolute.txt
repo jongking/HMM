@@ -1,0 +1,7 @@
+H:\GitHub\HMM\HMMTest\bin\Debug\HMMTest.exe
+H:\GitHub\HMM\HMMTest\bin\Debug\HMMTest.pdb
+H:\GitHub\HMM\HMMTest\bin\Debug\HMM.dll
+H:\GitHub\HMM\HMMTest\bin\Debug\HMM.pdb
+H:\GitHub\HMM\HMMTest\obj\Debug\HMMTest.csprojResolveAssemblyReference.cache
+H:\GitHub\HMM\HMMTest\obj\Debug\HMMTest.exe
+H:\GitHub\HMM\HMMTest\obj\Debug\HMMTest.pdb
